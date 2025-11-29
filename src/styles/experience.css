@@ -1,0 +1,139 @@
+/* Full Page Background */
+.experience-page {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background: #030b1b;
+  overflow: hidden;
+  padding-top: 120px;
+}
+
+/* Make particles work full screen */
+.experience-page canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -1 !important;
+}
+
+/* Page Title */
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 50px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00eaff, #a55cff);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: glowText 3s infinite alternate;
+}
+
+@keyframes glowText {
+  0% { text-shadow: 0 0 6px #00eaff; }
+  100% { text-shadow: 0 0 20px #00eaff, 0 0 40px #9b5cff; }
+}
+
+/* Layout Wrapper */
+.experience-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  color: white;
+  padding: 20px;
+  z-index: 2;
+}
+
+/* Timeline Line */
+.timeline {
+  border-left: 2px solid rgba(0,255,255,0.25);
+  padding-left: 35px;
+  position: relative;
+}
+
+/* Scroll Fill Animation */
+.timeline.scroll-progress::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(#00eaff, #9b5cff);
+  animation: scrollGrow linear forwards;
+  animation-timeline: scroll(y);
+}
+
+@keyframes scrollGrow {
+  to { height: 100%; }
+}
+
+/* Small Neon Dots */
+.line-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid #00eaff;
+  background: #0b1224;
+  box-shadow: 0 0 15px #00eaff;
+  position: absolute;
+  left: -43px;
+}
+
+/* Glassmorphism Card */
+.experience-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(0,255,255,0.25);
+  padding: 28px;
+  border-radius: 18px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0px 0px 25px rgba(0,255,255,0.15);
+  transition: 0.4s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: #00eaff;
+  box-shadow: 0px 0px 45px rgba(0,255,255,0.35);
+}
+
+/* Job Role */
+.role {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  display: flex;
+  gap: 8px;
+}
+
+/* Company Name */
+.company {
+  font-size: 1.2rem;
+  color: #00eaff;
+  margin-bottom: 5px;
+}
+
+.date { opacity: 0.7; }
+
+/* Bullet Points */
+.bullet-list {
+  margin-top: 10px;
+  padding-left: 20px;
+  line-height: 1.7rem;
+}
+
+.bullet-list li:hover {
+  transform: translateX(6px);
+  color: #00eaff;
+  text-shadow: 0 0 12px #00eaff;
+  transition: 0.3s;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .timeline { border-left: none; padding-left: 0; }
+  .line-dot { display: none; }
+  .title { font-size: 2.2rem; }
+  .experience-wrapper { padding: 10px; }
+}
+  

@@ -1,0 +1,190 @@
+/* -------------------------------------------------------
+   🔥 PREMIUM NAVBAR (Matching About Page Styling)
+-------------------------------------------------------- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(10, 10, 26, 0.45); /* Better dark tone */
+  border-bottom: 1px solid rgba(0, 255, 220, 0.15);
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.15);
+  transition: background 0.3s ease;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* -------------------------------------------------------
+   🔥 Portfolio Logo Styling
+-------------------------------------------------------- */
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #00eaff, #7b2ff7);
+  -webkit-background-clip: text;
+  color: transparent;
+
+  /* outline */
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.35);
+
+  transition: 0.4s ease;
+}
+
+.logo:hover {
+  letter-spacing: 3px;
+  transform: scale(1.1);
+  text-shadow: 0px 0px 18px rgba(0, 255, 255, 0.6);
+  -webkit-text-stroke: 1px #00eaff;
+}
+
+/* -------------------------------------------------------
+   🔥 Navigation Links
+-------------------------------------------------------- */
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-item {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: #e8e8e8;
+  font-size: 0.95rem;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+/* hover underline animation */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #00eaff;
+  border-radius: 4px;
+  transition: width 0.35s ease;
+}
+
+.nav-item:hover {
+  color: #00eaff;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* active page */
+.nav-item.active {
+  color: #00eaff;
+  font-weight: 600;
+}
+
+.nav-item.active::after {
+  width: 100%;
+}
+
+/* -------------------------------------------------------
+   🔥 Responsive
+-------------------------------------------------------- */
+
+/* -----------------------------------------
+    📱 MOBILE MENU (Desktop remains same)
+------------------------------------------*/
+@media (max-width: 768px) {
+
+  /* Show hamburger only on mobile */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 26px;
+    height: 3px;
+    background: #00eaff;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  /* X animation when open */
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Mobile dropdown */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(10, 10, 26, 0.95);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0,255,255,0.2);
+    width: 180px;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.35s ease;
+  }
+
+  /* When menu opens */
+  .nav-links.mobile-active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* One-By-One Animation for links */
+  .fade-in {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideIn 0.4s forwards;
+  }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 18px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
