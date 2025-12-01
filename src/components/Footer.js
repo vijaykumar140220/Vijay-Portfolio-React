@@ -28,7 +28,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        © {new Date().getFullYear()} Made with ❤️ by <span className="highlight">Vijaya Kumar</span>
+        © {new Date().getFullYear()} Made with ❤️ by <span className="highlight">Vijay Kumar</span>
       </div>
     </footer>
   );
