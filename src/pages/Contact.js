@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import BackgroundParticles from "../components/BackgroundParticles";
-import AnimatedBackground from "../components/AnimatedBackground";
 import user from "../data/userData";
 import "../styles/contact.css";
 
 export default function Contact() {
   return (
     <div className="contact-page">
-      <AnimatedBackground />
+      <BackgroundParticles />
 
       <motion.h2
         className="contact-title"
