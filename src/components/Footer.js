@@ -1,11 +1,11 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import "../styles/footer.css";
-import BackgroundParticles from "../components/BackgroundParticles"; // <-- Add this
+import BackgroundParticles from "../components/BackgroundParticles";
 
 export default function Footer() {
   return (
     <footer className="footer-container">
-      <BackgroundParticles /> {/* Background Animation */}
+      <BackgroundParticles />
 
       <div className="footer-content">
         <h3 className="footer-name">Vijaya Kumar</h3>
@@ -15,7 +15,7 @@ export default function Footer() {
           <a href="https://github.com/vijaykumar140220" target="_blank" rel="noreferrer">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/in/vijayakumar-dev/" target="_blank" rel="noreferrer">
             <FaLinkedin />
           </a>
           <a href={`mailto:vk9944836332@gmail.com`}>
